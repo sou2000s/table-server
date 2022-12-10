@@ -13,10 +13,14 @@ app.get('/' , (req , res)=>{
 })
 
 app.get('/users' , (req , res)=>{
-    const oder = req.query.oder ;
-    const result =  data.Sheet1.slice().sort((a, b) =>  oder === "dsc" ? b.id - a.id : a.id - b.id   )
-    res.send(result)
 
+        const oder = req.query.oder ;
+        console.log(oder);
+    const result =  data.Sheet1.slice().sort((a, b) =>   oder === "asc" ? a.id - b.id : b.id - a.id  )
+    // console.log(result);
+    res.send(result)
+    
+//   res.send(data)
 })
 // b.id - a.id
 
